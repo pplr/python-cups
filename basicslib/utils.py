@@ -38,7 +38,6 @@ def parseCreds(data: bytes) -> OptionalCred:
         key=key,
     )
 
-
 def readKey(data, pos) -> PrivateKeyTypes | None:
     keyBin = data[pos:]
     if keyBin == b'\x00\x00\x00\x00':
