@@ -6,7 +6,7 @@ UnconfirmedDataUp = 0b00000010
 ConfirmedDataUp = 0b00000100
 
 def parsePayload(data: bytes) -> PHYpayload:
-    mhdr,devaddr,fctrl,fcnt = unpack_from("<BiBB", data, 0)
+    mhdr,devaddr,fctrl,fcnt = unpack_from("<BiBH", data, 0)
     mtype = MType(mhdr)
     if mtype != UnconfirmedDataUp and mtype != ConfirmedDataUp:
         raise 'Only UnconfirmedDataUp and ConfirmedDataUp are implemented'

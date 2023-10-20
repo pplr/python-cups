@@ -17,7 +17,7 @@ class PayloadTestSuite(unittest.TestCase):
         assert payload.MHDR == 64
         assert payload.MACPayload.FHDR.DevAddr == 70394816
         assert payload.MACPayload.FHDR.FCtrl == 128
-        assert payload.MACPayload.FHDR.FCnt == 37
+        assert payload.MACPayload.FHDR.FCnt == 805
         assert payload.MACPayload.FHDR.FOpts == b''
         assert payload.MACPayload.FPort == 18
         assert payload.MACPayload.FRMPayload == b'\xC0\x3C\x22\x02\xE8\x13\xF4\x61\xF4\x3C\xCB\x44\xAB\xCC\x74\xE4\x67\xCF\x64\xA4\x9D\xF0\x02\x9E\xB7\x3F\x41\x06\x53\x88\xE1\x36\xD4\x0D'
