@@ -1,1 +1,6 @@
+cffi==1.16.0
+cryptography==41.0.4
 nose2==0.14.0
+pycparser==2.21
+pycryptodome==3.19.0
+websockets==11.0.3
