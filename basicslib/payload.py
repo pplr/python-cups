@@ -11,7 +11,7 @@ def parsePayload(data: bytes) -> PHYpayload:
     if mtype != UnconfirmedDataUp and mtype != ConfirmedDataUp:
         raise 'Only UnconfirmedDataUp and ConfirmedDataUp are implemented'
     foptslen = FOptsLen(fctrl)
-    fopts = data[7:7+foptslen]
+    fopts = data[8:8+foptslen]
     fportAndPayload = data[7+foptslen+1:-4]
     fport = -1
     frmPayload=None
@@ -36,7 +36,7 @@ def parsePayload(data: bytes) -> PHYpayload:
 
 
 def FOptsLen(fctrl: int) -> int:
-    return fctrl & 0b00000111
+    return fctrl & 0b00001111
 
 def MType(mhdr: int) -> int:
     return mhdr >> 5
